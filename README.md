@@ -44,6 +44,6 @@ You can use CocoaPods to install libraries by writing this command to the curren
 ```
 pod install
 ```
-
-
+## Contact
+Ayris Gürbulak - ayrisgurbulak@gmail.com
 
