@@ -11,10 +11,8 @@ import RealmSwift
 class HomeTableViewController: UITableViewController {
     
     var countryList:[countryData] = []
-    var countryCode: String = ""
-    var countryName: String = ""
     var saved: Bool = false
-
+    var code: String?
     
     let cellSpacingHeight: CGFloat = 0
     var dataManager = CountryDataManager()
@@ -26,6 +24,7 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.title = C.title
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         tableView.separatorStyle = .none
         
@@ -51,10 +50,13 @@ class HomeTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == C.homePageSegue {
+//                let control = segue.destination as! CountryDetailNavigationViewController
+//                let destinationVC = control.topViewController as! CountryDetailViewController
+            
                 let destinationVC = segue.destination as! CountryDetailViewController
-                destinationVC.countryCode = countryCode
-                destinationVC.countryName = countryName
+                
                 destinationVC.saved = saved
+                destinationVC.code = code
             }
         }
 
@@ -126,15 +128,10 @@ extension HomeTableViewController {
 extension HomeTableViewController: CountryTableViewCellDelegate {
     func didSelectCell(code: String, name: String, saved: Bool) {
         DispatchQueue.main.async {
-            self.countryCode = code
-            self.countryName = name
             self.saved = saved
+            self.code = code
             self.performSegue(withIdentifier: C.homePageSegue , sender: self)
         }
-    }
-    
-    func updateTableView() {
-        //
     }
     
 }

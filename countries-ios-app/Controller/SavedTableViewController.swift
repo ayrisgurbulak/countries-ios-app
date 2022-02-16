@@ -11,17 +11,20 @@ import RealmSwift
 class SavedTableViewController: UITableViewController {
     
     var countryList: Results<SavedCountry>?
-    var countryCode: String = ""
-    var countryName: String = ""
+    
     var saved: Bool = false
+    var country: CountryCodeData?
+    var code: String?
     
     let realm = try! Realm()
+    private let dataManager = CountryDataManager()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         navigationItem.title = C.title
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         loadCategories()
         
@@ -30,6 +33,7 @@ class SavedTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+
     }
     
     func loadCategories() {
@@ -38,16 +42,22 @@ class SavedTableViewController: UITableViewController {
         tableView.reloadData()
         
     }
-    
+     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == C.savedPageSegue {
+            
+//                let control = segue.destination as! CountryDetailNavigationViewController
+//                let destinationVC = control.topViewController as! CountryDetailViewController
+                
+                
                 let destinationVC = segue.destination as! CountryDetailViewController
-                destinationVC.countryCode = countryCode
-                destinationVC.countryName = countryName
+            
                 destinationVC.saved = saved
+                destinationVC.code = code
+                
             }
         }
-
+    
 }
 
 // MARK: - SavedTableViewController data source methods
@@ -103,17 +113,15 @@ extension SavedTableViewController {
 
 extension SavedTableViewController: CountryTableViewCellDelegate {
     func didSelectCell(code: String, name: String, saved: Bool) {
+
         DispatchQueue.main.async {
-            self.countryCode = code
-            self.countryName = name
             self.saved = saved
+            self.code = code
+            print("didSelectCell:",code)
             self.performSegue(withIdentifier: C.savedPageSegue, sender: self)
         }
     }
     
-    func updateTableView() {
-        tableView.reloadData()
-    }
 }
 
 

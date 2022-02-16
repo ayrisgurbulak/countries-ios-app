@@ -1,22 +1,41 @@
 PODS:
+  - CocoaLumberjack (3.7.4):
+    - CocoaLumberjack/Core (= 3.7.4)
+  - CocoaLumberjack/Core (3.7.4)
   - Realm (10.18.0):
     - Realm/Headers (= 10.18.0)
   - Realm/Headers (10.18.0)
   - RealmSwift (10.18.0):
     - Realm (= 10.18.0)
+  - SVGKit (2.1.0):
+    - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
   - RealmSwift
+  - SVGKit (from `https://github.com/SVGKit/SVGKit.git`, branch `2.x`)
 
 SPEC REPOS:
   trunk:
+    - CocoaLumberjack
     - Realm
     - RealmSwift
 
+EXTERNAL SOURCES:
+  SVGKit:
+    :branch: 2.x
+    :git: https://github.com/SVGKit/SVGKit.git
+
+CHECKOUT OPTIONS:
+  SVGKit:
+    :commit: c40671b9a264f8f71831c4e0452736debfae2164
+    :git: https://github.com/SVGKit/SVGKit.git
+
 SPEC CHECKSUMS:
+  CocoaLumberjack: 543c79c114dadc3b1aba95641d8738b06b05b646
   Realm: b8b0a36bf48c39c50fd8cee7ac34005e6d887ddd
   RealmSwift: fe2f33d731f47aaf4c3618930f9f7cf7b935c33f
+  SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
 
-PODFILE CHECKSUM: 5198991e0d2e948a9b49ee1e74b6a01c40572d0a
+PODFILE CHECKSUM: bce995f65fade64dfe80355aa5aa4cf9b4e51f20
 
 COCOAPODS: 1.11.2

@@ -10,7 +10,7 @@ import RealmSwift
 
 protocol CountryTableViewCellDelegate {
     func didSelectCell(code: String, name: String, saved: Bool)
-    func updateTableView()
+    //func updateTableView()
 }
 
 class CountryTableViewCell: UITableViewCell {
@@ -46,26 +46,25 @@ class CountryTableViewCell: UITableViewCell {
             savedCountry.code = countryCodeLabel.text!
             savedCountry.dateCreated = Date()
             self.save(country: savedCountry)
-            delegate?.updateTableView()
             
         }
         else if sender.imageView?.image == UIImage(systemName: "star.fill") {
             countryFavouriteButton.setImage(UIImage(systemName: "star"), for: .normal)
             self.delete(countryName: countryNameLabel.text!)
-            delegate?.updateTableView()
         }
         
     }
     
     func save(country: SavedCountry) {
-        do{
+        do {
             try realm.write {
                 realm.add(country)
             }
-        } catch{
+        } catch {
             print("error saving context \(error)")
         }
     }
+    
     func delete(countryName: String) {
         let countryForDeletion = realm.objects(SavedCountry.self).filter("name = '\(countryName)'")
         

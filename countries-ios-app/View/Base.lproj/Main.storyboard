@@ -37,7 +37,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="gsd-mf-6lz"/>
                     <connections>
-                        <segue destination="DX0-GL-q1v" kind="show" identifier="savedToDetail" id="hLx-W2-r2v"/>
+                        <segue destination="DX0-GL-q1v" kind="show" identifier="saveToDetail" id="xPE-jC-hfD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgI-qI-pkr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -49,12 +49,12 @@
             <objects>
                 <navigationController id="EVJ-Vt-guC" userLabel="Saved Page Navigation Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Saved Item" image="heart.fill" catalog="system" id="uH4-42-0wO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x99-gp-G6f">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="arrow.left" catalog="system" backIndicatorTransitionMaskImage="arrow.left" id="x99-gp-G6f">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -93,7 +93,7 @@
                     <navigationItem key="navigationItem" id="SHK-bM-dhK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="DX0-GL-q1v" kind="show" identifier="homeToDetail" id="9nY-hc-oTt"/>
+                        <segue destination="DX0-GL-q1v" kind="show" identifier="homeToDetail" id="DYh-Jv-SHM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euo-ro-21F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -178,12 +178,10 @@
                             <constraint firstItem="XR6-ob-Jbn" firstAttribute="bottom" secondItem="GQr-DE-Kdw" secondAttribute="bottom" id="IkS-zB-rjF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Country" id="15F-0H-YNB">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.backward" catalog="system" id="qtt-Ei-QR7"/>
+                    <navigationItem key="navigationItem" id="15F-0H-YNB">
                         <barButtonItem key="rightBarButtonItem" title="Favourite Item" image="star.fill" catalog="system" id="ljn-5t-6B5"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="backButtonItem" destination="qtt-Ei-QR7" id="QHg-i8-BC2"/>
                         <outlet property="countryCodeLabel" destination="FGr-96-ssG" id="bNT-sE-pqw"/>
                         <outlet property="countryImageView" destination="YBr-KY-rHd" id="gqY-tc-h34"/>
                         <outlet property="favouriteButton" destination="ljn-5t-6B5" id="Bae-jy-ShA"/>
@@ -191,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biG-Qp-bKH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4539" y="-220"/>
+            <point key="canvasLocation" x="4613.04347826087" y="-265.17857142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LEw-sJ-9ZC">
@@ -225,12 +223,15 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0sj-VT-3uN" userLabel="Home Page Navigation Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home Item" image="homekit" catalog="system" id="C1E-KX-fu4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lx4-x5-RXQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="arrow.left" catalog="system" backIndicatorTransitionMaskImage="arrow.left" id="lx4-x5-RXQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -245,10 +246,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hLx-W2-r2v"/>
+        <segue reference="xPE-jC-hfD"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
