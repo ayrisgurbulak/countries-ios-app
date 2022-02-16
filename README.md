@@ -22,12 +22,14 @@ Users can remove the country on this page.
 
 - Detail Page
 
-Users can see country code.
+Users can see country code, country name and country flag.
+
+Users can add a country to the saved list and remove a country from the saved list.
 
 Users can be navigated to wikidata with “wikiDataId” by clicking For More Information
 button.
 
-<img width="200" alt="Screen Shot 2022-01-11 at 19 42 01" src="https://user-images.githubusercontent.com/67962952/148984620-236c2a66-ef77-4056-9c11-a7bd5b3b0686.png">
+<img width="200" alt="Screen Shot 2022-02-17 at 01 01 20" src="https://user-images.githubusercontent.com/67962952/154364794-6d3ff8a0-de2e-4684-9899-9d89aa4e47d2.png">
 
 CocoaPods - Realm was used for saved list.
 
